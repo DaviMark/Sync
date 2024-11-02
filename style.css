@@ -420,6 +420,9 @@ body {
         font-size: 10px; /* Reduce font size further */
         padding: 5px 8px; /* Smaller padding */
     }
+    .main-container{
+        max-height: 90vh;
+    }
 }
 
 /* Adjust Chat Messages */
