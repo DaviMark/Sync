@@ -366,3 +366,72 @@ body {
         font-size: 12px; /* Tamanho da fonte do botão de envio */
     }
 }
+
+/* Responsive Design Enhancements */
+@media (max-width: 1200px) {
+    .logo img {
+        height: 45px; /* Adjust height for larger screens */
+    }
+    .chat-input input {
+        padding: 12px; /* Slightly smaller padding */
+    }
+}
+
+/* Medium Screens */
+@media (max-width: 992px) {
+    .chat-input {
+        flex-direction: column; /* Stack inputs for medium screens */
+        align-items: stretch; /* Stretch elements to fill space */
+    }
+
+    .chat-input input {
+        margin-bottom: 10px; /* Add margin between input and button */
+    }
+
+    .clear-button {
+        width: 30%; /* Full width on medium screens */
+        padding: 10px; /* Adjust size */
+    }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+    .chat-input {
+        flex-direction: row; /* Maintain side by side layout */
+    }
+
+    .chat-input input {
+        padding: 6px; /* Smaller padding for inputs */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .clear-button {
+        padding: 6px; /* Adjust size */
+        font-size: 10px; /* Make font smaller */
+        min-width: 80px; /* Ensure minimum size */
+    }
+
+    .chat-input button {
+        padding: 4px 10px; /* Smaller button size */
+        font-size: 12px; /* Smaller text */
+    }
+
+    .new-chat-button {
+        font-size: 10px; /* Reduce font size further */
+        padding: 5px 8px; /* Smaller padding */
+    }
+}
+
+/* Adjust Chat Messages */
+.chat-messages {
+    padding: 8px; /* Slightly reduce padding for smaller screens */
+}
+
+.message {
+    padding: 10px 15px; /* Ensure padding scales down */
+}
+
+/* Ensure suggestion bubbles are flexible */
+#suggestion-bubbles {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}

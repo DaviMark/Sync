@@ -24,6 +24,7 @@
     <!-- <meta name="twitter:image" content="URL_da_imagem_exibida"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM1bGqVbKQYgWl1G4RA8PH5k/jaz4h81G54W1e" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome 6 -->
+    <script src="/analise.js" defer></script>
 </head>
 </head>
 <body>
@@ -47,10 +48,13 @@
                     <button class="suggestion-btn primary-suggestion">O que é a Assoc?</button>
                     <button class="suggestion-btn primary-suggestion">Serviços da Assoc!</button>
                     <button class="suggestion-btn primary-suggestion">Porque é importante?</button>
+                    <button id="clear-btn" class="clear-button">Limpar Conversas</button>
+                    <!-- Analisar arquivo -->
+
                 </div>
                 
                 <div class="chat-input">
-                    <button id="clear-btn" class="clear-button">Limpar Conversas</button>
+                    
                     <input type="text" id="message-input" placeholder="Digite sua mensagem..." autocomplete="off">
                     <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
                 </div>
@@ -58,6 +62,9 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
 
     <script src="script.js"></script>
 </body>
