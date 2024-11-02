@@ -7,6 +7,11 @@ const predefinedQA = [
     { "question": "Tchau", "answer": "Até logo! Volte sempre!" },
     { "question": "Obrigado", "answer": "De nada! Estou sempre à disposição." },
     { "question": "Valeu", "answer": "Valeu! Qualquer coisa, é só avisar!" },
+    // Sobre Assoc
+    { "question": "Porque é importante?", "answer": "Os serviços da Assoc são essenciais para empresas que buscam se destacar no mercado. Oferecemos soluções de Marketing, como Landing Pages que convertem, gerenciamento de Social Media e Copywriting persuasivo, além de estratégias personalizadas. Na área de Tecnologia, garantimos a Estruturação de Bancos de Dados, Construção de Sites e Apps, e Automatização de Processos, otimizando a eficiência e proporcionando insights valiosos. Ao escolher a Assoc, você investe em soluções que promovem crescimento e resultados duradouros." },
+    { "question": "Serviços da Assoc!", "answer": "Na Assoc, temos uma variedade de pacotes de projetos em diversas áreas. Confira todas as informações em nosso site: https://assoc-woad.vercel.app/" },
+    { "question": "O que é a Assoc?", "answer": "A Assoc é uma empresa especializada em Tecnologia e Marketing, dedicada a ajudar indivíduos e projetos a ganharem visibilidade no mercado. Oferecemos soluções inovadoras que incluem automação de tarefas e estratégias personalizadas, permitindo que nossos clientes se destaquem em suas respectivas áreas. Nosso objetivo é promover a diferenciação e o sucesso de nossos clientes, adaptando-nos às suas necessidades específicas e às dinâmicas do mercado." },
+    // Fim    
     { "question": "Como é feito um site?", "answer": "Um site é feito usando algumas ferramentas e códigos. As mais comuns são HTML, que organiza o conteúdo; CSS, que cuida do visual; e JavaScript, que traz interatividade." },
     { "question": "Como é desenvolvido um aplicativo?", "answer": "Um aplicativo é criado com linguagens específicas. Para celulares, usamos Swift ou Kotlin, e também podemos usar ferramentas como React Native ou Flutter para facilitar o trabalho." },
     { "question": "Qual a importância de ter um site desenvolvido por um desenvolvedor?", "answer": "Um desenvolvedor cria um site que funciona bem, é seguro e tem um design que combina com sua empresa." },
