@@ -1,0 +1,368 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: #1a1a1d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    max-width: 1600px;
+    background-color: #252529;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo img {
+    height: 50px; /* Adjust the height as needed */
+}
+
+/* Chat Container */
+.chat-container {
+    flex: 1;
+    background-image: url(/imgs/back1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo translúcida */
+    background-blend-mode: overlay; /* Mistura a cor de fundo com a imagem */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+/* Container das sugestões de perguntas */
+.predefined-questions {
+    display: flex;
+    flex-direction: column;
+    max-height: 150px; /* Definido para exibir 3 sugestões com base na altura */
+    overflow-y: auto; /* Habilita rolagem vertical caso tenha mais de 3 sugestões */
+    padding: 5px;
+    background-color: #2c2d31;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.predefined-questions::-webkit-scrollbar {
+    width: 5px;
+}
+
+.predefined-questions::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+}
+
+.predefined-questions .suggestion {
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.predefined-questions .suggestion:hover {
+    background-color: #555;
+}
+
+
+/* Container geral do chat */
+.chat-container {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    height: 100vh; /* Faz o contêiner ocupar a altura total da viewport */
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1; /* Permite que esse elemento ocupe todo o espaço restante */
+    overflow-y: auto; /* Garante que a rolagem vertical esteja habilitada */
+    padding: 10px; /* Padding para o contêiner de mensagens */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+}
+
+/* Scrollbar Customization */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background-color: #252529;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    max-width: 100%;
+    opacity: 0;
+    animation: appear 0.5s forwards;
+}
+
+.message.user {
+    background-color: #28a745;
+    color: white;
+    margin-left: auto; /* Empurra o elemento para a esquerda, mas mantém alinhado à direita */
+    max-width: 60%; /* Controla o tamanho máximo da mensagem */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+}
+
+.message.bot {
+    background-color: #33343A;
+    color: white;
+    align-self: flex-start;
+    text-align: left;
+    max-width: 60%;
+    box-shadow: 0 4px 8px rgba(51, 52, 58, 0.4);
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 15px;
+    background-color: #252529;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.chat-input input:focus {
+    background-color: #444;
+}
+
+/* Send Button */
+.chat-input button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.chat-input button:hover {
+    background-color: #075f1c;
+    transform: scale(1.1);
+}
+
+/* Chat Input Area */
+.chat-input-area {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #33343A;
+    border-radius: 10px;
+}
+
+/* Botão Limpar Conversas */
+.clear-button {
+    padding: 8px 10px;
+    background-color: #ff4757; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 25px; /* Bordas arredondadas */
+    margin-right: 10px; /* Espaço entre o botão e o input */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    font-size: 14px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    box-shadow: 0 4px 8px rgba(255, 71, 87, 0.4); /* Sombra para destaque */
+}
+
+/* Efeitos ao passar o mouse */
+.clear-button:hover {
+    background-color: #ff6b81; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o tamanho levemente */
+}
+
+.clear-button:focus {
+    outline: none; /* Remove contorno padrão ao focar */
+}
+
+
+/* Animations */
+@keyframes appear {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar Customization */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background-color: #252529;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo img {
+        height: 40px; /* Adjust the height for smaller screens */
+    }
+
+    .chat-input button {
+        padding: 10px 15px;
+    }
+
+    .message {
+        padding: 10px 15px;
+    }
+}
+
+
+/* Sugestoes */
+
+#suggestion-bubbles {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilo comum para todos os botões de sugestão */
+.suggestion-btn {
+    border: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Estilo para sugestões da classe 'primary-suggestion' */
+.primary-suggestion {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Estilo para sugestões da classe 'secondary-suggestion' */
+.secondary-suggestion {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Efeito hover para os botões */
+.suggestion-btn:hover {
+    opacity: 0.8;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+#send-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.new-chat-button {
+    padding: 5px 10px; /* Reduzir o padding */
+    background-color: #28a745; /* Verde */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 20px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    position: absolute; /* Posicionar o botão */
+    left: 4%; /* Alinhar à esquerda da tela */
+    top: 3%; /* Alinhar ao topo da tela */
+    z-index: 10; /* Colocar o botão na frente */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    font-size: 12px; /* Tamanho da fonte menor */
+}
+
+.new-chat-button:hover {
+    background-color: #218838; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o tamanho levemente */
+}
+
+
+/* Responsividade */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chat-input {
+        flex-direction: row; /* Mantém os elementos lado a lado */
+        gap: 2px; /* Reduz o espaço entre os elementos */
+    }
+
+    .chat-input input {
+        padding: 6px; /* Ajuste o padding do input */
+        flex-grow: 1; /* Permite que o input ocupe mais espaço */
+    }
+
+    .clear-button {
+        padding: 0px 0px; /* Diminuir ainda mais o tamanho do botão de limpar */
+        font-size: 10px; /* Tamanho da fonte do botão de limpar */
+    }
+
+    .chat-input button {
+        padding: 4px 10px; /* Ajusta o padding do botão de envio */
+        font-size: 12px; /* Tamanho da fonte do botão de envio */
+    }
+}
