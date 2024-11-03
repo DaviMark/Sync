@@ -419,7 +419,7 @@ body {
     .new-chat-button {
         font-size: 10px; /* Reduce font size further */
         padding: 5px 8px; /* Smaller padding */
-        left: 5%;
+        left: 15%;
     }
     .main-container{
         max-height: 90vh;
@@ -438,4 +438,60 @@ body {
 /* Ensure suggestion bubbles are flexible */
 #suggestion-bubbles {
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Responsividade Ajustada para o Chat no Celular */
+@media (max-width: 768px) {
+    .main-container {
+        height: 100vh; /* Ocupa toda a altura da tela */
+        max-height: 100vh;
+    }
+
+    .chat-container {
+        height: calc(100vh - 60px); /* Garante que o chat ocupe a maior parte da tela, considerando o input */
+    }
+
+    .chat-messages {
+        max-height: calc(100vh - 140px); /* Limita a altura das mensagens para evitar que empurre o input */
+        overflow-y: auto; /* Garante a rolagem caso haja muitas mensagens */
+        padding: 8px; /* Ajusta o padding */
+    }
+
+    /* Mantém o input fixo no fundo da tela */
+    .chat-input {
+        position: sticky;
+        bottom: 0;
+        background-color: #33343A;
+        padding: 10px;
+        width: 100%;
+        z-index: 1000; /* Garante que o input fique sempre acima */
+    }
+
+    /* Reduz tamanhos para telas menores */
+    .chat-input input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .clear-button {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .chat-input button {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+
+/* Ajustes de Layout para quando a resposta é muito longa */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Mantém o input sempre no final */
+}
+
+.chat-messages {
+    overflow-y: auto; /* Permite que as mensagens rolem */
+    flex-grow: 1; /* Ocupa o espaço restante sem empurrar o input */
 }
