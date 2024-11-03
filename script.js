@@ -542,6 +542,14 @@ function getBotResponse(userMessage) {
         const location = userMessage.split("em ")[1]; // Extrai a localização após "em"
         return getWeather(location); // Chama uma função para obter o clima da localização
     }
+    // Verifica se a mensagem contém o comando de buscar imagens
+    else if (userMessage.toLowerCase().includes("imagem sobre")) {
+        // Extrai o termo de pesquisa após "imagem sobre"
+        const searchTerm = userMessage.split("imagem sobre ")[1]; 
+        // Abre o Google Imagens com a consulta
+        window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchTerm)}`, '_blank');
+        return `Buscando imagens sobre "${searchTerm}" no Google...`;
+    }
 
 
     // Busca por uma resposta na lista de perguntas e respostas pré-definidas
