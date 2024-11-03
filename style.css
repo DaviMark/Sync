@@ -491,3 +491,22 @@ body {
     overflow-y: auto; /* Permite que as mensagens rolem */
     flex-grow: 1; /* Ocupa o espaço restante sem empurrar o input */
 }
+
+
+/* analise */
+
+.file-upload-button {
+    display: inline-block;
+    padding: 8px 10px;
+    background-color: #3b4fd4; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.file-upload-button:hover {
+    background-color: #0019b8; /* Verde mais escuro ao passar o mouse */
+}
