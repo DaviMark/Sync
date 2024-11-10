@@ -558,3 +558,8 @@ function getBotResponse(userMessage) {
     return response ? response.answer : "Não sei como responder a isso. Posso te ajudar com outra coisa?";
 }
 
+
+// Para nao ver o codigo fonte
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault(); // Impede o menu de contexto (botão direito do mouse)
+  });
